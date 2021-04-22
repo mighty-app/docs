@@ -1,18 +1,19 @@
-import { RedocStandalone } from 'redoc';
 import HttpsRedirect from 'react-https-redirect';
+import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import Docs from './Docs';
+import theme from './theme';
 
 function App() {
   return (
     <div className='App'>
-      <HttpsRedirect>
-        <RedocStandalone
-          specUrl='https://api.mightyapp.cc/spec'
-          options={{
-            nativeScrollbars: true,
-            theme: { colors: { primary: { main: '#dd5522' } } },
-          }}
-        />
-      </HttpsRedirect>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <HttpsRedirect>
+          <Docs />
+        </HttpsRedirect>
+      </ThemeProvider>
     </div>
   );
 }
