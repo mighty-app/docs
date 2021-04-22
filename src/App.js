@@ -1,15 +1,18 @@
 import { RedocStandalone } from 'redoc';
+import HttpsRedirect from 'react-https-redirect';
 
 function App() {
   return (
     <div className='App'>
-      <RedocStandalone
-        specUrl='https://api.mightyapp.cc/spec'
-        options={{
-          nativeScrollbars: true,
-          theme: { colors: { primary: { main: '#dd5522' } } },
-        }}
-      />
+      <HttpsRedirect>
+        <RedocStandalone
+          specUrl='https://api.mightyapp.cc/spec'
+          options={{
+            nativeScrollbars: true,
+            theme: { colors: { primary: { main: '#dd5522' } } },
+          }}
+        />
+      </HttpsRedirect>
     </div>
   );
 }
