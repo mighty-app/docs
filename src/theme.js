@@ -1,5 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
+// https://coolors.co/9246ff
+
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
